@@ -47,27 +47,29 @@ export default defineNuxtConfig({
 })
 ```
 
-### 2. Use $dayjs on Context, Vue instance
+### 2. Use $dayjs
 
-with Context
+Composition API
 
 ```html
-<script>
-export default {
-  asyncData({ $dayjs }) {
-    return {
-      now: $dayjs().format('YYYY/MM/DD')
-    }
-  }
-}
+<script lang="ts" setup>
+const dayjs = useDayjs()
+dayjs().format('YYYY/MM/DD')
+
+// Or
+
+const { $dayjs } = useNuxtApp()
+$dayjs().format('YYYY/MM/DD')
 </script>
 ```
 
-with Vue instance
+Options API
 
 ```html
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   data() {
     return {
       latestClicked: null
@@ -78,26 +80,8 @@ export default {
       this.latestClicked = this.$dayjs().format('YYYY/MM/DD')
     }
   }
-}
+})
 </script>
-```
-
-### For Typescript users
-
-Add the types to your `"types"` array in `tsconfig.json` after the `@nuxt/types` entry.
-
-For dayjs plugins, add their relative types like `dayjs/plugin/_pluginName_`.
-
-#### tsconfig.json
-
-```json
-{
-  "compilerOptions": {
-    "types": [
-      "dayjs/plugin/relativeTime"
-    ]
-  }
-}
 ```
 
 ## Development

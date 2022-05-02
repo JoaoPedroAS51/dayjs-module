@@ -8,6 +8,7 @@ import {
   createResolver,
   addAutoImport
 } from '@nuxt/kit'
+import { name, version } from '../package.json'
 import { generateConfigContents } from './gen'
 import { formatLogMessage } from './utils'
 import { validateModuleOptions } from './validators'
@@ -21,8 +22,12 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'dayjs-module',
-    configKey: 'dayjs'
+    name,
+    version,
+    configKey: 'dayjs',
+    compatibility: {
+      bridge: true
+    }
   },
   defaults: {
     locales: [],

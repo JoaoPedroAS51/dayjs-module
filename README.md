@@ -25,7 +25,9 @@ $ yarn add @nuxtjs/dayjs # or npm install
 ### 1. Register dayjs module to your Nuxt Application
 
 ```js
-export default {
+import { defineNuxtConfig } from 'nuxt'
+
+export default defineNuxtConfig({
   // ...
   modules: [
     '@nuxtjs/dayjs'
@@ -42,7 +44,7 @@ export default {
     ] // Your Day.js plugin
   }
   // ...
-}
+})
 ```
 
 ### 2. Use $dayjs on Context, Vue instance
@@ -92,9 +94,7 @@ For dayjs plugins, add their relative types like `dayjs/plugin/_pluginName_`.
 {
   "compilerOptions": {
     "types": [
-      "@nuxt/types",
-      "@nuxtjs/dayjs",
-      "dayjs/plugin/relativeTime",
+      "dayjs/plugin/relativeTime"
     ]
   }
 }
@@ -102,11 +102,8 @@ For dayjs plugins, add their relative types like `dayjs/plugin/_pluginName_`.
 
 ## Development
 
-```bash
-$ git clone https://github.com/nuxt-community/dayjs-module.git
-$ cd @nuxtjs/dayjs
-$ yarn
-```
+- Run `npm run dev:prepare` to generate type stubs.
+- Use `npm run dev` to start [playground](./playground) in development mode.
 
 ## License
 

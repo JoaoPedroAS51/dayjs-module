@@ -1,0 +1,44 @@
+{
+  "name": "@nuxtjs/dayjs",
+  "version": "2.0.0",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "lint": "eslint --ext .js,.vue,.ts .",
+    "release": "yarn lint && standard-version && git push --follow-tags && npm publish"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "lib/**/*.{js,jsx}"
+    ]
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.0.0-rc.1",
+    "consola": "^2.15.3",
+    "dayjs": "^1.10.7",
+    "pathe": "^0.2.0"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "eslint": "latest",
+    "nuxt": "^3.0.0-rc.1",
+    "standard-version": "^9.3.2"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@nuxtjs/dayjs",
+  "version": "2.0.0",
+  "configKey": "dayjs",
+  "compatibility": {
+    "bridge": true
+  }
+}

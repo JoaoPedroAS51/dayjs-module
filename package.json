@@ -29,7 +29,7 @@
     ]
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.1",
+    "@nuxt/kit": "^3.0.0-rc.6",
     "consola": "^2.15.3",
     "dayjs": "^1.10.7"
   },
@@ -37,7 +37,7 @@
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "eslint": "latest",
-    "nuxt": "^3.0.0-rc.1",
+    "nuxt": "^3.0.0-rc.6",
     "standard-version": "^9.3.2"
   }
 }

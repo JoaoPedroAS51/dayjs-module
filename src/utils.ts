@@ -1,5 +1,5 @@
-import consola from 'consola'
+import { useLogger } from '@nuxt/kit'
 
-export const formatLogMessage = (message: string) => `[@nuxtjs/dayjs] ${message}`
+export const formatLogMessage = (message: string) => `[nuxt:dayjs] ${message}`
 
-export const log = (type: 'error' | 'warn' | 'log' | 'info', message: string) => consola[type](formatLogMessage(message))
+export const logger = useLogger('nuxt:dayjs')

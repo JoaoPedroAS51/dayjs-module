@@ -61,10 +61,7 @@ const module = defineNuxtModule({
   meta: {
     name,
     version,
-    configKey: "dayjs",
-    compatibility: {
-      bridge: true
-    }
+    configKey: "dayjs"
   },
   defaults: {
     locales: [],

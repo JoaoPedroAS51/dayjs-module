@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from 'dayjs/esm/index.js';
 import '#build/dayjs.config.mjs';
 declare const _default: any;
 export default _default;

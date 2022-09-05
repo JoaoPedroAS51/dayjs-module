@@ -1,4 +1,4 @@
-import { useLogger, defineNuxtModule, isNuxt2, isNuxt3, getNuxtVersion, createResolver, addPlugin, addTemplate, addAutoImport } from '@nuxt/kit';
+import { useLogger, defineNuxtModule, isNuxt2, isNuxt3, getNuxtVersion, createResolver, addPlugin, addTemplate, addImports } from '@nuxt/kit';
 
 const name = "@nuxtjs/dayjs";
 const version = "2.0.0";
@@ -87,7 +87,7 @@ const module = defineNuxtModule({
       filename: "dayjs.config.mjs",
       getContents: () => generateConfigContents(options)
     });
-    addAutoImport({
+    addImports({
       name: "useDayjs",
       as: "useDayjs",
       from: resolve(runtimeDir, "composables")

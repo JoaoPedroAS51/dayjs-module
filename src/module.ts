@@ -6,7 +6,7 @@ import {
   addPlugin,
   addTemplate,
   createResolver,
-  addAutoImport
+  addImports
 } from '@nuxt/kit'
 import { name, version } from '../package.json'
 import { generateConfigContents } from './gen'
@@ -58,7 +58,7 @@ export default defineNuxtModule<ModuleOptions>({
       getContents: () => generateConfigContents(options)
     })
 
-    addAutoImport({
+    addImports({
       name: 'useDayjs',
       as: 'useDayjs',
       from: resolve(runtimeDir, 'composables')

@@ -25,9 +25,6 @@ export default defineNuxtModule<ModuleOptions>({
     name,
     version,
     configKey: 'dayjs',
-    compatibility: {
-      bridge: true
-    }
   },
   defaults: {
     locales: [],

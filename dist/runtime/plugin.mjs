@@ -1,6 +1,10 @@
-import { defineNuxtPlugin } from "#app";
-import dayjs from "dayjs/esm/index";
+import { defineNuxtPlugin } from "#imports";
+import dayjs from "dayjs";
 import "#build/dayjs.config.mjs";
-export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.provide("dayjs", dayjs);
+export default defineNuxtPlugin(() => {
+  return {
+    provide: {
+      dayjs
+    }
+  };
 });
